@@ -6,6 +6,9 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: `Contact | ${BUSINESS_INFO.name}`,
   description: HOMEPAGE_DATA.metaDescription,
+  alternates: {
+    canonical: "https://www.chimneysweepmidlothian.site/contact/",
+  },
 };
 
 export default function ContactPage() {

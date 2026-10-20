@@ -20,8 +20,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.chimneysweepmidlothian.site"),
   title: HOMEPAGE_DATA.seoTitle,
   description: HOMEPAGE_DATA.metaDescription,
+  verification: {
+    google: "FE7OV_YfOIObmHkDp-dvrPGe9CERGhFge3GOGuXWVyk",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.chimneysweepmidlothian.site/",
+  },
 };
 
 export default function RootLayout({

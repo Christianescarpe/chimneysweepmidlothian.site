@@ -5,6 +5,9 @@ import DesignTemplatePage from "@/components/DesignTemplatePage";
 export const metadata: Metadata = {
   title: HOMEPAGE_DATA.seoTitle,
   description: HOMEPAGE_DATA.metaDescription,
+  alternates: {
+    canonical: "https://www.chimneysweepmidlothian.site/",
+  },
 };
 
 export default function HomePage() {

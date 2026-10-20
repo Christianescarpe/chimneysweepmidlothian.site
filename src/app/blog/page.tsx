@@ -7,6 +7,9 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: `Blog | ${BUSINESS_INFO.name}`,
   description: BLOG_POSTS[0].metaDescription,
+  alternates: {
+    canonical: "https://www.chimneysweepmidlothian.site/blog/",
+  },
 };
 
 export default function BlogIndexPage() {

@@ -22,6 +22,9 @@ export async function generateMetadata({
   return {
     title: page.seoTitle,
     description: page.metaDescription,
+    alternates: {
+      canonical: `https://www.chimneysweepmidlothian.site${page.urlSlug}`,
+    },
   };
 }
 
