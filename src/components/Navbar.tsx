@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Phone, ChevronDown, Menu, X, Flame } from "lucide-react";
-import { BUSINESS_INFO, SERVICE_PAGES, LOCATION_PAGES, BLOG_POSTS } from "@/data/siteContent";
+import { BUSINESS_INFO, SERVICE_PAGES, LOCATION_PAGES } from "@/data/siteContent";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -78,32 +78,12 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Blogs Link + Dropdown */}
-          <div className="relative group">
-            <Link
-              href="/blog/"
-              className="flex items-center gap-1.5 text-xs font-semibold tracking-[0.15em] uppercase text-gray-300 group-hover:text-[#F04E23] transition-colors py-6"
-            >
-              BLOG <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
-            </Link>
-            <div className="absolute right-0 top-full w-80 bg-[#181818] border border-[#2A2A2A] shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 py-2 z-50 max-h-[70vh] overflow-y-auto">
-              <Link
-                href="/blog/"
-                className="block px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#F04E23] hover:bg-[#222222] border-b border-[#2A2A2A]"
-              >
-                All Blog Articles →
-              </Link>
-              {BLOG_POSTS.map((b) => (
-                <Link
-                  key={b.urlSlug}
-                  href={b.urlSlug}
-                  className="block px-4 py-2.5 text-xs text-gray-300 hover:bg-[#222222] hover:text-[#F04E23] transition-colors border-b border-[#222222] last:border-none"
-                >
-                  {b.pageTitle}
-                </Link>
-              ))}
-            </div>
-          </div>
+          <Link
+            href="/blog/"
+            className="text-xs font-semibold tracking-[0.15em] uppercase text-gray-300 hover:text-[#F04E23] transition-colors"
+          >
+            BLOG
+          </Link>
 
           <Link
             href="/contact/"
@@ -215,42 +195,13 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Mobile Blog */}
-          <div className="border-b border-[#242424]">
-            <button
-              type="button"
-              onClick={() => setMobileSection(mobileSection === "blog" ? null : "blog")}
-              className="w-full flex items-center justify-between py-2.5 text-sm font-bold uppercase tracking-wider text-white"
-            >
-              <span>Blog</span>
-              <ChevronDown
-                className={`w-4 h-4 transition-transform ${
-                  mobileSection === "blog" ? "rotate-180 text-[#F04E23]" : ""
-                }`}
-              />
-            </button>
-            {mobileSection === "blog" && (
-              <div className="pl-3 pb-3 space-y-2">
-                <Link
-                  href="/blog/"
-                  onClick={() => setMobileOpen(false)}
-                  className="block py-1.5 text-xs font-bold text-[#F04E23]"
-                >
-                  All Blog Posts →
-                </Link>
-                {BLOG_POSTS.map((b) => (
-                  <Link
-                    key={b.urlSlug}
-                    href={b.urlSlug}
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-1.5 text-xs text-gray-300 hover:text-[#F04E23]"
-                  >
-                    {b.pageTitle}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          <Link
+            href="/blog/"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2.5 text-sm font-bold uppercase tracking-wider text-white border-b border-[#242424]"
+          >
+            Blog
+          </Link>
 
           <Link
             href="/contact/"
